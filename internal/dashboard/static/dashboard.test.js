@@ -312,7 +312,7 @@ test("renderError replaces stale App status explanation and accessibility metada
 
     const status = document.getElementById("app-status");
     const tooltip = document.getElementById("app-status-tooltip");
-    assert.equal(status.textContent, "API error");
+    assert.equal(status.innerHTML, '<span class="pill bad">API error</span>');
     assert.equal(status.title, "App status unavailable because the dashboard API request failed.");
     assert.equal(status.attributes["aria-label"], status.title);
     assert.equal(tooltip.textContent, status.title);
@@ -622,8 +622,14 @@ test("renderSeries applies capability visibility with a minimal DOM stub", () =>
     assert.deepEqual(dashboard.state.charts.runtime.data.datasets[1].data, [25]);
     assert.deepEqual(dashboard.state.charts.latency.data.datasets[0].data, [34]);
 
+    dashboard.renderSeries({ points: [{ process_cpu_usage: 0.25 }] });
+    assert.equal(document.getElementById("application-section").hidden, true);
+    assert.equal(document.getElementById("process-section").hidden, false);
+    assert.equal(dashboard.detectCapabilities([{ process_cpu_usage: 0.25 }]).application, false);
+
     dashboard.renderSeries({ points: [] });
     assert.equal(document.getElementById("host-section").hidden, true);
+    assert.equal(document.getElementById("process-section").hidden, true);
   } finally {
     global.document = originalDocument;
   }

@@ -528,6 +528,8 @@ function renderSeries(series) {
   ]);
 
   const capabilities = detectCapabilities(points);
+  setSectionVisible("metrics-section", capabilities.application || capabilities.process);
+  setSectionVisible("application-heading", capabilities.application);
   setSectionVisible("application-section", capabilities.application);
   setSectionVisible("process-section", capabilities.process);
   setSectionVisible("host-section", capabilities.host);
@@ -678,7 +680,7 @@ function createEventRow(event, elementName = "div") {
 function renderError(error) {
   const status = document.getElementById("app-status");
   const explanation = "App status unavailable because the dashboard API request failed.";
-  status.textContent = "API error";
+  status.innerHTML = '<span class="pill bad">API error</span>';
   status.title = explanation;
   status.setAttribute("aria-label", explanation);
   document.getElementById("app-status-tooltip").textContent = explanation;

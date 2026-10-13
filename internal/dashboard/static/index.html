@@ -14,7 +14,7 @@
   src: url("/static/fonts/orbitron-2.001-700.woff2") format("woff2");
 }
 </style>
-<script src="/static/vendor/chart.4.4.8.min.js"></script>
+<script src="/static/vendor/chart.4.5.0.min.js"></script>
 <style>
 :root {
   color-scheme: dark;
@@ -150,8 +150,10 @@ main {
 .target-type-wrap,
 .label-help {
   position: relative;
-  display: inline-flex;
   align-items: center;
+}
+.target-type-wrap {
+  display: inline-flex;
   gap: 4px;
 }
 .target-endpoint {
@@ -231,6 +233,9 @@ main {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+.application-charts:not([hidden]) {
+  display: contents;
 }
 .label-help {
   display: flex;
@@ -547,9 +552,10 @@ pre {
     <div class="metric poll-status"><div class="label">Last poll</div><div id="last-poll" class="value small"><span id="poll-status-state" class="poll-status-state">...</span><span id="poll-status-time" class="poll-status-time"></span></div><div id="poll-error" class="poll-status-error" hidden></div><div id="poll-last-success" class="poll-last-success" hidden></div></div>
   </section>
 
-  <section id="application-section" class="capability-section" aria-labelledby="application-heading">
+  <section id="metrics-section" class="capability-section" aria-label="Application and process metrics">
     <h2 id="application-heading">Application</h2>
     <div class="chart-grid">
+    <div id="application-section" class="application-charts" role="group" aria-labelledby="application-heading">
     <div class="chart">
       <div class="chart-head"><h2>Requests</h2><div id="requests-note" class="note"></div></div>
       <div class="canvas-wrap"><canvas id="requests-chart"></canvas></div>
@@ -562,8 +568,9 @@ pre {
       <div class="chart-head"><h2 class="label-help">Average latency <button type="button" class="help" aria-label="Average latency help" aria-expanded="false">i</button><span class="tooltip" role="tooltip">Average request time for each interval, not a percentile.</span></h2><div id="latency-note" class="note"></div></div>
       <div class="canvas-wrap"><canvas id="latency-chart"></canvas></div>
     </div>
+    </div>
     <div id="process-section" class="chart">
-      <div class="chart-head"><h2 class="label-help">Process runtime <button type="button" class="help" aria-label="Runtime help" aria-expanded="false">i</button><span id="runtime-tooltip" class="tooltip" role="tooltip">CPU usage and runtime memory reported by the target. Their exact measurements depend on the integration and may differ from OS process CPU and total process memory.</span></h2></div>
+      <div class="chart-head"><h2 id="process-heading" class="label-help">Process runtime <button type="button" class="help" aria-label="Runtime help" aria-expanded="false">i</button><span id="runtime-tooltip" class="tooltip" role="tooltip">CPU usage and runtime memory reported by the target. Their exact measurements depend on the integration and may differ from OS process CPU and total process memory.</span></h2></div>
       <div class="canvas-wrap"><canvas id="runtime-chart"></canvas></div>
     </div>
     </div>

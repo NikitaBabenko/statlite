@@ -4,6 +4,16 @@ This file summarizes the main user-facing changes in each StatLite release.
 GitHub release notes use the matching version section, with commit history as
 a fallback when a section is missing.
 
+## Unreleased
+
+- Show process runtime charts for targets without HTTP metrics.
+- Preserve the App status pill and explain dashboard API refresh failures.
+- Update the bundled Chart.js to 4.5.0, purego to 0.11.1, x/sys to 0.49.0,
+  and SQLite to 1.60.1 with matching libc 1.77.1.
+- Added a [Javalin integration recipe](docs/integrate/java/javalin.md) for an
+  application-owned `statlite-metrics/v1` endpoint using Javalin's Micrometer
+  instrumentation.
+
 ## v0.6.0 (2026-10-05)
 
 - Added first-class Micronaut monitoring with an explicit `micronaut` target,
@@ -30,12 +40,6 @@ a fallback when a section is missing.
   inspection stays read-only, and suggested targets use stable names based on
   type, host, and port.
 - Added a compact Simplified Chinese README landing page.
-
-## Unreleased
-
-- Added a [Javalin integration recipe](docs/integrate/java/javalin.md) for an
-  application-owned `statlite-metrics/v1` endpoint using Javalin's Micrometer
-  instrumentation.
 
 ## v0.5.0 (2026-09-25)
 

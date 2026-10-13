@@ -4,7 +4,6 @@ package server
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
 	"syscall"
 	"time"
@@ -35,7 +34,6 @@ type StatliteStorageHealth struct {
 //   - Cached SQLite storage check failure sets status to "error" and returns HTTP 503.
 //   - When no monitor/manager is configured, storage is reported as "unavailable" and the process stays healthy.
 func (s *Server) handleHealthz(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
 	now := time.Now().UTC()
 
 	storageStatus := s.storageHealthStatus()
@@ -50,8 +48,7 @@ func (s *Server) handleHealthz(w http.ResponseWriter, r *http.Request) {
 		httpCode = http.StatusServiceUnavailable
 	}
 
-	w.WriteHeader(httpCode)
-	json.NewEncoder(w).Encode(HealthResponse{
+	writeJSON(w, httpCode, HealthResponse{
 		Status:    processStatus,
 		Version:   version.Version,
 		Timestamp: now.Format(time.RFC3339),
