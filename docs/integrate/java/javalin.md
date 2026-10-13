@@ -287,3 +287,23 @@ are optional and omitted when their gauges are unavailable or invalid.
 - Connect readiness to an authoritative inexpensive or cached application
   signal. Do not infer dependency health from requests or run network/database
   checks on every metrics poll.
+
+
+## References and future first-class support
+
+The helper and runnable example omit database-health reporting to keep the
+integration simple, so the dashboard shows “DB health: Not reported.” The v1
+contract accepts an optional `database_status` from an authoritative or cached
+application signal; it does not require a database check on every metrics poll.
+
+- [Runnable Javalin example](https://github.com/PVRLabs/experiments/tree/main/statlite/javalin-micrometer)
+- [StatLite Metrics v1 specification](../../statlite-metrics-v1.md)
+- [Why StatLite Metrics?](../../monitoring-options.md#why-statlite-metrics)
+- [Integration guide index](../)
+- [StatLite configuration](../../configuration.md)
+- [Javalin documentation](https://javalin.io/documentation)
+
+Interested in a native, first-class Javalin target or database-health reporting?
+[Open an issue](https://github.com/PVRLabs/statlite/issues/new/choose) or
+[start a GitHub Discussion](https://github.com/PVRLabs/statlite/discussions/new/choose).
+We're open to exploring it; tell us about your application and the signals you need.
