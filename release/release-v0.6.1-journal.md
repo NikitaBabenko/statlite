@@ -52,8 +52,12 @@ receive missing identity metadata through the release manifest.
 - Four downloaded archive checksums and binary/license contents PASS. Native archive reports v0.6.1 with embedded clean certified commit.
 - GHCR and Docker Hub: PASS for versioned/latest tags, amd64/arm64 content, versions, anonymous pulls and runtime checks in the authoritative workflow.
 - Post-release development version: `v0.6.2-dev`.
-- Pending: development-commit CI, installer/Homebrew checks and announcement.
+- Development bump commit: `99882fb48b117c9881f9288e7ce9829d1865d4ce`; test `38951516258` and integration `38951516101` PASS.
+- Exact tagged installer into a temporary directory: PASS, statlite v0.6.1.
+- Homebrew updater `38951518780`: PASS. Local brew audit, upgrade from 0.6.0, brew test and installed version PASS. Homebrew reports this Intel macOS host as Tier 3; installation built from source.
+- Announcement published 2026-10-16: https://github.com/PVRLabs/statlite/discussions/27. All six release/tagged documentation links resolve; commands use verified installation paths and the exact release image.
 
 ## Sign-off
 
-Release agent, 2026-10-16. Publication verified; post-release completion pending.
+Release agent, 2026-10-16. All required certification, publication, installation
+and announcement steps complete. No release blockers remain.
