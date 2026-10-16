@@ -203,6 +203,21 @@ Use the exact release tag in links and examples so the announcement remains
 accurate after newer versions are published. The [v0.4.1
 announcement](https://github.com/PVRLabs/statlite/discussions/15) is an example.
 
+After publishing the release announcement, update the permanent pinned
+[latest release and changelog post](https://github.com/PVRLabs/statlite/discussions/24):
+
+- Update the latest-release version, date, short summary, and links to the
+  release, announcement, and tagged changelog.
+- Update the getting-started commands and documentation links to the verified
+  release version.
+- Add a dated entry at the top of the release history with the main changes
+  and links to the release and detailed announcement. Preserve older entries.
+- Verify all updated links and commands, and record the pinned-post update
+  in the release journal.
+
+Edit discussion #24 in place and keep it pinned. Its URL is permanent and is
+shared externally; reuse it across patch, minor, and major releases.
+
 ## Recovery
 
 If only the Docker Hub mirror fails, inspect its job logs, repair credentials
