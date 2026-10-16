@@ -6,6 +6,8 @@ a fallback when a section is missing.
 
 ## Unreleased
 
+## v0.6.1 (2026-10-16)
+
 - Show process runtime charts for targets without HTTP metrics.
 - Preserve the App status pill and explain dashboard API refresh failures.
 - Update the bundled Chart.js to 4.5.0, purego to 0.11.1, x/sys to 0.49.0,
@@ -13,6 +15,9 @@ a fallback when a section is missing.
 - Added a [Javalin integration recipe](docs/integrate/java/javalin.md) for an
   application-owned `statlite-metrics/v1` endpoint using Javalin's Micrometer
   instrumentation.
+
+- Publish verified multi-platform release images to Docker Hub alongside GHCR.
+- Clarify native installation, first configuration, and integration setup.
 
 ## v0.6.0 (2026-10-05)
 
