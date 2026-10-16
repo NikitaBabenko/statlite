@@ -6,7 +6,7 @@
 - Release issue: [#63](https://github.com/paseo-verde-research/statlite/issues/63).
 - Maintenance source: #59.
 - Operator authorization: user requested the next release and said "proceed" on 2026-10-16 after the v0.6.1 recommendation and release sequence.
-- Candidate branch: `release/v0.6.1`.
+- Candidate branch: `main` (direct push; no pull request required).
 
 ### Scope and compatibility
 
