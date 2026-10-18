@@ -3,6 +3,13 @@
   StatLite
 </h1>
 
+[![Deploy to VibeNest](https://vibenest.net/deploy-to-vibenest.svg)](https://vibenest.net/deploy?repo=https://github.com/NikitaBabenko/statlite)
+
+**VibeNest pilot: blocked, not runtime verified.** This independent fork retains
+upstream behavior, including its lack of dashboard/API authentication. Do not
+publish it publicly yet. Read [VIBENEST.md](VIBENEST.md) for the current blockers,
+intended configuration, and acceptance requirements. No upstream endorsement.
+
 [![GitHub release](https://img.shields.io/github/v/release/PVRLabs/statlite)](https://github.com/PVRLabs/statlite/releases)
 [![Go powered](https://img.shields.io/github/go-mod/go-version/PVRLabs/statlite?label=Go%20powered&logo=go&logoColor=white)](go.mod)
 [![Frameworks: Spring Boot · Quarkus · Micronaut](https://img.shields.io/badge/Frameworks-Spring%20Boot%20%C2%B7%20Quarkus%20%C2%B7%20Micronaut-e7e7e7?labelColor=333)](docs/integrations.md)
