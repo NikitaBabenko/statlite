@@ -5,7 +5,7 @@
 
 [![Deploy to VibeNest](https://vibenest.net/deploy-to-vibenest.svg)](https://vibenest.net/deploy?repo=https://github.com/NikitaBabenko/statlite)
 
-**VibeNest pilot: blocked, not runtime verified.** This independent fork retains
+**VibeNest pilot: rejected for the current platform, not runtime verified.** This independent fork retains
 upstream behavior, including its lack of dashboard/API authentication. Do not
 publish it publicly yet. Read [VIBENEST.md](VIBENEST.md) for the current blockers,
 intended configuration, and acceptance requirements. No upstream endorsement.

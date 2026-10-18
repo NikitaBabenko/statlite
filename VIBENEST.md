@@ -1,7 +1,7 @@
 # VibeNest compatibility pilot
 
-Status on 2026-10-18: **blocked before deployment; Free-tier and one-click
-acceptance have not passed**. This is an independent experimental fork, not an
+Status on 2026-10-18: **rejected for the current platform at preflight; Free-tier
+and one-click acceptance have not passed**. This is an independent experimental fork, not an
 upstream-endorsed integration.
 
 [![Deploy to VibeNest](https://vibenest.net/deploy-to-vibenest.svg)](https://vibenest.net/deploy?repo=https://github.com/NikitaBabenko/statlite)
@@ -25,8 +25,18 @@ safe or supported. Do not continue to launch this revision publicly.
   needs only the root Dockerfile and one container. No Continue was clicked.
 
 No VibeNest project, container, hardware attachment, or runtime attempt was
-created for this pilot. It is deferred with concrete blockers, not waiting for
-a platform release. The fork's GitHub Actions are disabled.
+created for this pilot. The current assessment is closed with a justified
+preflight rejection, not a rejected deployment attempt or a security hold.
+The fork's GitHub Actions are disabled. No RAM suitability conclusion was drawn.
+
+Reconsider only after a fresh read-only check demonstrates that the complete
+repository can fit the then-serving scanner's selection budget through the
+normal authorized path, without deleting source, tests, or examples to evade
+scanning. The production revision observed on 2026-10-18 was
+`3ebf31e92d075e5f489eb14e5d51b9f3e2683dd5`; its selector still counts 176
+eligible files in this fork against a limit of 128. Reconsideration must also
+include tested mandatory authentication and a single-container configuration
+before obtaining a runtime slot and completing the acceptance checks below.
 
 ## Intended configuration (not applied or verified)
 
